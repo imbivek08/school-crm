@@ -1,0 +1,61 @@
+# Binaries
+
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.out
+*.test
+*.app
+
+# Go build
+
+/bin/
+/build/
+/dist/
+
+# Go workspace file
+
+go.work
+go.work.sum
+
+# Dependency directories (remove if you commit vendor)
+
+vendor/
+
+# Environment files
+
+.env
+.env.local
+.env.*
+
+# Logs
+
+*.log
+
+# Coverage reports
+
+coverage.out
+*.coverprofile
+
+# IDE / Editor
+
+.vscode/
+.idea/
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Temporary files
+
+*.tmp
+*.swp
+*.swo
+*~
+
+# Docker
+
+docker-compose.yaml

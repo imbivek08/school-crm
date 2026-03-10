@@ -19,21 +19,23 @@ type Config struct {
 }
 
 func (s *Config) LoadEnv() (*Config, error) {
-	password := os.Getenv("PASSWORD")
+	password := os.Getenv("DB_PASSWORD")
+	fmt.Println(password)
 	if password == "" {
 		return nil, fmt.Errorf("password is required")
 	}
-	serverPort := os.Getenv("SERVER_")
+	serverPort := os.Getenv("SERVER_PORT")
 	if serverPort == "" {
 		serverPort = "8080"
 	}
 	return &Config{
-		Host:        os.Getenv("HOST"),
+		Host:        os.Getenv("DB_HOST"),
 		Password:    password,
 		ServerPort:  serverPort,
 		DBName:      os.Getenv("DB_NAME"),
-		Username:    os.Getenv("USERNAME"),
-		SSLMode:     os.Getenv("SSL_MODE"),
+		Username:    os.Getenv("DB_USERNAME"),
+		SSLMode:     os.Getenv("DB_SSLMODE"),
+		Port:        os.Getenv("DB_PORT"),
 		MaxOpenConn: 8,
 		MaxIdleConn: 5,
 	}, nil
