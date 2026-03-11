@@ -43,10 +43,10 @@ func (s *Server) Start() error {
 
 func (s *Server) setupMiddleware() {
 	// Logger middleware
-	s.echo.Use(middleware.RequestLoggerWithConfig(middleware.RequestLoggerConfig{
-		LogStatus: true,
-		LogURI:    true,
-	}))
+	// s.echo.Use(middleware.RequestLoggerWithConfig(middleware.RequestLoggerConfig{
+	// 	LogStatus: true,
+	// 	LogURI:    true,
+	// }))
 
 	// Recover middleware
 	s.echo.Use(middleware.Recover())

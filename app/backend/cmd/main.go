@@ -6,6 +6,7 @@ import (
 
 	"github.com/imbivek08/school-crm/internal/config"
 	"github.com/imbivek08/school-crm/internal/database"
+	"github.com/imbivek08/school-crm/internal/server"
 	"github.com/joho/godotenv"
 )
 
@@ -23,4 +24,8 @@ func main() {
 	}
 	defer db.Close()
 	log.Print("database connected successfully")
+	srv := server.NewServer(config, db)
+	if err := srv.Start(); err != nil {
+		log.Fatalf("Failed to start the server:%v", err)
+	}
 }
